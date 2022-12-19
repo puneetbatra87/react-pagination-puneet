@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-pagination-puneet'
+import Pagination from 'react-pagination-puneet'
 import 'react-pagination-puneet/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  let page = 1;
+  const totalPages = 5;
+
+  const handleChangePage = (currentPage) => {
+    page = currentPage;
+  }
+  return <Pagination page={page} pages={totalPages} handleChangePage={handleChangePage} />
 }
 
-export default App
+export default App;
